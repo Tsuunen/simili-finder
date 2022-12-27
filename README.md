@@ -1,4 +1,6 @@
-#Simili Finder
+
+# Simili Finder
+
 Find file with the same name
 
 To install :
