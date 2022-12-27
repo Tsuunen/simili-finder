@@ -37,3 +37,4 @@ try:
 except IndexError:
     print("""error : argument(s) missing
        "simili-finder <folder path> <output file name>\"""")
+
