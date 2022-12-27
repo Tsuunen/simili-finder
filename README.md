@@ -7,3 +7,8 @@ To install :
 ```
 sudo snap install simili-finder --devmode
 ```
+
+To update :
+```
+sudo snap refresh simili-finder --devmode #didn't try but maybe
+```
