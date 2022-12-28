@@ -1,5 +1,5 @@
 
-# Simili Finder (v0.3.1)
+# Simili Finder (v0.4)
 
 Find file with the same name
 
@@ -17,15 +17,20 @@ Syntax :
 
   * To find file with the same name :
   ```
-  simili-finder <folder path> <output file name>
+  simili-finder scan <folder path> <output file name>
   ```
 
   * To find file with the same x same character :
   ```
-  simili-finder <folder path> <output file name> <number of character>
+  simili-finder scan <folder path> <output file name> <number of character>
   ```
 
-  * To find file with the same word in it:
+  * To find file with the same word in it :
   ```
-  simili-finder <folder path> <output file name> word
+  simili-finder scan <folder path> <output file name> word
+  ```
+
+  * To find a specific file :
+  ```
+  simili-finder find <folder path> <output file name> <file name>
   ```

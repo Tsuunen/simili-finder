@@ -59,20 +59,49 @@ def word_doublon(chemin):
                     file[j] = [repertoire + "/" + i]
     return file
 
+def find(chemin, file_name):
+    file = {}
+
+    for (repertoire, sousRepertoire, fichiers) in os.walk(chemin):
+        print(repertoire)
+        for i in fichiers:
+            name = os.path.splitext(i)
+            if name[0] == file_name:
+                try:
+                    if file[name[0]]:
+                        file[name[0]].append(repertoire + "/" + i)
+                except:
+                    file[name[0]] = [repertoire + "/" + i]
+    if len(file) == 0:
+        file["Not Found"] = ["File not found", "See more on : github.com/Tsuunen/simili-finder"]
+    return file
+
+
 
 try:
-    chemin = argv[1]
-    output_file_name = argv[2]
+    action = argv[1]
+    chemin = argv[2]
+    output_file_name = argv[3]
 
-    try:
-        arg = argv[3]
+    if action == "scan":
         try:
-            arg = int(arg)
-            file = start_doublon(chemin, arg)
-        except:
+            arg = argv[4]
+            try:
+                arg = int(arg)
+                file = start_doublon(chemin, arg)
+            except:
                 file = word_doublon(chemin)
-    except:
-        file = doublon(chemin)
+        except:
+            file = doublon(chemin)
+    elif action == "find":
+        try:
+            file_name = argv[4]
+            file = find(chemin, file_name)
+        except:
+            print("error : file name not providen")
+    else:
+        print("action doesn't exists")
+        exit()
 
     back = "\n  "
     if os.path.exists(f"{output_file_name}.txt"):
@@ -91,4 +120,4 @@ try:
 
 except:
     print("error : see more info on github.com/Tsuunen/simili-finder")
-        
+
