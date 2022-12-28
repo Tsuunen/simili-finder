@@ -14,6 +14,7 @@ sudo snap refresh simili-finder --devmode
 ```
 
 Syntax :
+
   To find file with the same name :
   ```
   simili-finder <folder path> <output file name>
