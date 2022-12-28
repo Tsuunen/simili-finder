@@ -109,12 +109,19 @@ try:
         print(f"{output_file_name}.txt removed")
 
     for keys, values in file.items():
-        if len(values) > 1:
-            with open(f"{output_file_name}.txt", "a") as out:
-                out.write(f"""
+        if action != "find":
+            if len(values) > 1:
+                with open(f"{output_file_name}.txt", "a") as out:
+                    out.write(f"""
 {keys}:
   {back.join(values)}
-                      """)
+                        """)
+        else:
+            with open(f"{output_file_name}.txt", "a") as out:
+                out.write(f"""
+{keys} :
+  {back.join(values)}
+                          """)
     print(f"{output_file_name}.txt created")
     print("Succesfull operation")
 

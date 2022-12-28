@@ -1,5 +1,5 @@
 
-# Simili Finder (v0.4)
+# Simili Finder (v0.4.1)
 
 Find file with the same name
 
