@@ -6,7 +6,7 @@ import time
 
 def help():
     print("""
-Simili-finder v0.5
+Simili-finder v0.5.1
 
 commands :
     scan : find file with some similarity
@@ -22,6 +22,8 @@ commands :
         -f : name of the file (mandatory)
 
     help : see the command list
+
+    quit : quit to program
             
         """)
 
@@ -138,6 +140,8 @@ while True:
 
     if parameter[0] == "help":
         help()
+    elif parameter[0] == "quit":
+        break
     else:
         options = get_parameter(parameter)
 
