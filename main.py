@@ -6,7 +6,7 @@ import time
 
 def help():
     print("""
-Simili-finder v0.5.3
+Simili-finder v0.5.4
 
 commands :
     scan : find file with some similarity
@@ -191,7 +191,7 @@ while True:
                 continue
             result = find(directory, file)
         else:
-            result = {}
+            continue
         
     if len(result) != 0:
         back = "\n  "
