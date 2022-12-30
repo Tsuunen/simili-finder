@@ -6,7 +6,7 @@ import time
 
 def help():
     print("""
-Simili-finder v0.5.1
+Simili-finder v0.5.3
 
 commands :
     scan : find file with some similarity
@@ -62,11 +62,11 @@ def doublon(path):
         print(directory)
         for i in files:
             name = os.path.splitext(i)
-        try:
-            if result[name[0]]:
-                result[name[0]].append(directory + delimiter + i)
-        except:
-            result[name[0]] = [directory + delimiter + i]
+            try:
+                if result[name[0]]:
+                    result[name[0]].append(directory + delimiter + i)
+            except:
+                result[name[0]] = [directory + delimiter + i]
     return result
 
 
@@ -140,6 +140,7 @@ while True:
 
     if parameter[0] == "help":
         help()
+        continue
     elif parameter[0] == "quit":
         break
     else:
@@ -189,6 +190,8 @@ while True:
                 print("Simili-finder: file name mandatory")
                 continue
             result = find(directory, file)
+        else:
+            result = {}
         
     if len(result) != 0:
         back = "\n  "
